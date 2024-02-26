@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
-import { IntlProvider, FormattedMessage } from 'react-intl';
+import { IntlProvider} from 'react-intl';
 import UserList from './component/UserList';
 import CreateUserForm from './component/CreateUser';
-import { MESSAGES_FR } from './translation';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal'
 
