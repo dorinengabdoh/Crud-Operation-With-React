@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { setUsers } from '../store/slices/userSlices';
 
 
-
+// get query
 export const GET_USERS = gql`
   query {
     all_users {

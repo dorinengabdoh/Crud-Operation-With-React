@@ -5,6 +5,8 @@ import { gql } from "@apollo/client";
 import { MESSAGES_FR } from "../translation";
 import useListUsers from "../hooks/UseGetUser";
 
+
+// query to create a user
 const UPDATE_USER = gql`
 mutation EditUser($id: String!, $first_name: String!, $last_name: String!, $email: String!, $birth_date: String!, $gender: String!) {
   editUser(id: $id, first_name: $first_name, last_name: $last_name, email: $email, birth_date: $birth_date, gender: $gender) {
@@ -28,6 +30,7 @@ function UpdateUserForm({ user,onClose }) {
 
   const [editUser] = useMutation(UPDATE_USER)
 
+  // the handle user update 
   const handleUpdateeUser = async () => {
     console.log("hey", first_name, last_name, email, birth_date, gender);
     await editUser({

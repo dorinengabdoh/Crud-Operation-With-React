@@ -6,6 +6,8 @@ import { MESSAGES_FR } from "../translation";
 import useListUsers from "../hooks/UseGetUser";
 
 
+
+// create query
 const CREATE_USER = gql`
     mutation AddNewUser(
       $first_name: String!
@@ -31,7 +33,7 @@ const CREATE_USER = gql`
     }
   `;
 
-
+//  create userForm
 function CreateUserForm({ user }) {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
@@ -40,8 +42,10 @@ function CreateUserForm({ user }) {
   const [gender, setGender] = useState("");
   const { refetch } = useListUsers()
 
+
   const [add_new_user] = useMutation(CREATE_USER);
 
+  // handle updateUser
   const handleCreateUser = async () => {
     console.log(user);
       await add_new_user({
